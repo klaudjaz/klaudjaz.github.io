@@ -1,0 +1,430 @@
+/* FONTS AND COLORS
+
+font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'Lato', san-serif;
+
+#FF0000 - YouTube red
+#FFFFFF - white
+#282828 - Almost black
+
+Youtube Branding Info: https://www.youtube.com/intl/en-GB/yt/about/brand-resources/#logos-icons-colors
+
+*/
+
+/* -------------- */
+
+/* CSS RESET
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*body*/
+body {background-color: #FFFFFF} /*youtube white*/
+
+/* -------NAVIGATION BAR------- */
+
+/*style navigation bar*/
+nav {
+	display: flex;
+  flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	background-color: #FF0000; /*youtube red*/
+	text-align: center;
+	align-items: center;
+  height: 10vh;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    height: 13vh;
+  }
+}
+
+
+/*bold site title*/
+a.logo {
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+/*stylize text in navbar*/
+nav li {
+	font-size: 1.7em;
+	display: inline;
+  padding: 2%;
+}
+
+/*clear up text decoration (remove hyperlink underline)*/
+nav a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+		color: #FFFFFF;
+}
+
+/*switch text and background color when hovering over link*/
+nav a:hover {
+	color: #FFFFFF;
+}
+
+.menu-left {
+	padding: 2%;
+}
+
+/*hamburger menu styling*/
+  /*Code adapted from http://www.cutcodedown.com/tutorial/mobileMenu (Updated 23 April, 2018), accessed 2018-10-29. */
+
+#menuShowHide {
+	position: absolute;
+	left: -999em;
+}
+
+.ham {
+	display: none;
+	flex-direction: column;
+	z-index: 10;
+}
+
+.ham-menu {
+	position: absolute;
+	align-self: center;
+	list-style: none;
+	margin-top: 4em;
+  text-align: center;
+  background-color: #FF0000;
+  visibility: hidden;
+	opacity: 1;
+	width: 98%;
+	align-self: flex-end;
+}
+
+.ham-menu li {
+	display: block;
+}
+
+.ham-menu a {
+	display: block;
+	width: 100%;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	text-decoration: none;
+	color: #FFFFFF; /*youtube white*/
+}
+
+.ham-menu a:active,
+.ham-menu a:focus,
+.ham-menu a:hover {
+  background-color: #282828; /*youtube black*/
+}
+
+#menuShowHide:checked~.ham-menu {
+  visibility: visible;
+  display: block;
+  transition: all 0.7s ease;
+  opacity: 1;
+}
+
+#menu-icon {
+	display: inline-flex;
+	width: 5vw;
+}
+
+.ham-menu li {
+  width: 100%;
+}
+
+.ham-menu li:active,
+.ham-menu li:focus,
+.ham-menu li:hover {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+#menuShowHide+label {
+  display: block;
+  padding: 1em;
+  cursor: pointer;
+}
+
+#menuShowHide:checked+label {
+  margin: 0;
+}
+
+#menuShowHide:checked~.ham-menu {
+  display: block;
+}
+
+/*convert navbar items to column under 650px*/
+@media screen and (max-width: 800px) {
+  nav {
+    flex-wrap: wrap;
+		flex-direction: row;
+  }
+  nav> li {
+    flex-basis: 50%;
+		justify-content: center;
+		font-size: 3vw;
+  }
+	nav li {
+    display: none;
+  }
+	.ham {
+		display: flex;
+	}
+	.menu-left.ul {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.menu-left {
+    display: inline-flex;
+    align-items: flex-end;
+		float: right;
+  }
+	nav li a {
+    display: block;
+    text-decoration-line: none;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    padding: 0.8em;
+  }
+  nav li a:hover {
+    background-color: #FFFFFF;
+    transition-property: background;
+    transition-duration: 0.3s;
+  }
+}
+
+/* ------- HEADLINE & BYLINE ------- */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+#main_title {
+  text-align: center;
+}
+
+#main_title a {
+		color: #FF0000;
+}
+
+#main_title_text h1 { /*find out way to make title shrink */
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  text-decoration: underline;
+  /* height: 10vw; */
+  font-size: 7vw;
+  display: flex;
+  display:inline-block;
+}
+
+#main_title_text h3 { /*headlines for seconday article pages */
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 7vh;
+  margin: 1vw;
+  flex-direction: row;
+	margin-top: 3vh;
+}
+
+@media screen and (max-width: 800px) {
+	#main_title_text h1 {
+    font-size: 9vw;
+  }
+}
+
+.youtubeLogo {
+  -webkit-text-stroke: .5px red;
+  color: white;
+  font-weight: bold;
+}
+
+#subtitle {
+  font-size: 3vh;
+  margin: 1vw;
+  flex-direction: row;
+  /* margin: 0.5vw 0 0.5vw 0vw; */
+}
+
+/* ------- MAIN TEXT ------- */
+
+.story {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.section a:before, a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: #FF0000; /* youtube red */
+}
+/*switch text and background color when hovering over link*/
+.section a:hover {
+	background-color: #282828; /* youtube black */
+	color: #FFFFFF; /* youtube white */
+}
+
+@media screen and (max-width: 1050px) {
+  .story {
+    width: 90vw;
+  }
+}
+
+.section {
+  /* background-color:  #ffe8e7; */
+  margin: 1vw 0 1vw 0;
+  padding: 0vw 2vw 0 2vw;
+  border-style: solid;
+  border-width: thin;
+  border-color: red;
+}
+
+.story p {
+  font-size: 12.5pt;
+  font-style: normal;
+  padding: 0 1vw 1vw 1.5vw;
+  line-height: 155%;
+  margin-bottom: 1vh;
+}
+
+.story h2 {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 5vh;
+  font-style: bold;
+  width: 95%;
+  padding: 2vw 1vw 1.5vw 1.5vw;
+  line-height: 120%;
+  background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1050px) {
+  .story {
+    width: 90vw;
+  }
+}
+
+#pull_quote {
+  float: right;
+  width: 25vw;
+  padding: 0.50vw;
+  margin: 2vw;
+  /* border: 0.75vw #FF0000;
+  border-style: solid; */
+  color: #FF0000;
+  font-size: 1.5em;
+  font-family: 'Pathway Gothic One', sans-serif;
+  /* font-style: italic; */
+}
+
+@media screen and (max-width: 700px) {
+	#pull_quote {
+    float: none;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/*------------------ FOOTER ------------------*/
+/*style navigation bar*/
+.footer {
+	display: flex;
+  flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	background-color: #FF0000;
+	padding: 1%;
+	margin-top: 1em;
+  font-style: bold;
+}
+
+.footer p {
+  font-family:'Pathway Gothic One', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#foot_logo a {
+  font-family:'Pathway Gothic One', sans-serif;
+  font-size: .5em;
+}
+/*clear up text decoration (hyperlink underline)*/
+#footer a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: #FFFFFF; /* youtube white */
+}
+/*switch text and background color when hovering over link*/
+#footer a:hover {
+	background-color: #282828; /* youtube black */
+	color: #FFFFFF; /* youtube white */
+}
+/*stylize links*/
+.links {
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	text-align: left;
+}
+/*stylize logo*/
+.foot_logo {
+	float: right;
+	text-align: right;
+}
+/*convert navbar items to column under 650px*/
+@media screen and (max-width: 650px) {
+  .footer {
+    flex-wrap: wrap;
+		flex-direction: row;
+		margin-top: .2em;
+		font-size: 1.1em;
+}
+}
